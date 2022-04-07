@@ -12,7 +12,7 @@ router.get('/', (request, response) => {
 
 });
 
-router.post('/', (request, response) => {
+router.get('/map', (request, response) => {
 
 
     var googleMapsCoordinate = ['https://goo.gl/maps/wV8vdhsktQ1J4hdcA', 'https://goo.gl/maps/PV3qgx1QsqUT3cov7']
