@@ -34,6 +34,8 @@ app.use('/api/users', require('./routes/users'));
 //all requests associated with the text channel must make use of this route
 app.use('/api/textChannel', require('./routes/textChannel'));
 
+app.use('/api/shelters', require('./routes/shelters'));
+
 const PORT = process.env.PORT || 3200;
 
 app.listen(PORT, console.log(`Server running at: ${PORT}`));
