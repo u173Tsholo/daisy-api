@@ -63,8 +63,9 @@ router.post('/createNewChannel', (request, response) => {
         userName = data[0].name;
 
         //get id of the specified role
-        Role.findAll( { raw: true, where: { role: {[Op.like]:  request.body.role } } } )
+        Role.findAll( { raw: true, where: { role: {[Op.like]:  request.body.role.toLowerCase } } } )
         .then ( data => {
+            console.log('here---<<< ', data[0])
             adminRoleid = data[0].id;
             adminRole = data[0].role;
 
@@ -179,7 +180,7 @@ router.post("/replyToUser", (request, response) => {
                     let userMessageObject = {
                         "message": request.body.message,
                         "timestamp": currentTime,
-                        "user": "Admin",
+                        "user": "admin",
                         "sentTo": request.body.user
                     }
 
